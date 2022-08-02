@@ -1,6 +1,6 @@
 # [PDF2NG](https://stelios333.github.io/pdf2ng)
 PDF2NG is an online pdf to png convertor.\
-**Features**\
+**Features:**
  1. It's free.
  2. You can download the pages both as png and jpg.
  3. Usable on tablets.
