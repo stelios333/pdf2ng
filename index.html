@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+<!--S2jS 2019-2022© Pdf to Png converter 2.0-->
+
+<head>
+    <meta charset='UTF-8'>
+    <title>PDF2NG</title>
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" type="image/svg+xml"
+        href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMnB4IiBjbGFzcz0iIj48Zz48Zz48Zz48cGF0aCBkPSJtNDU5LjI2NSA0NjYuMjg2YzAgMjUuMjQ4LTIwLjUwOCA0NS43MTQtNDUuODA2IDQ1LjcxNGgtMzE0LjkxOGMtMjUuMjk4IDAtNDUuODA2LTIwLjQ2Ny00NS44MDYtNDUuNzE0di00MjAuNTcyYzAtMjUuMjQ3IDIwLjUwOC00NS43MTQgNDUuODA2LTQ1LjcxNGgxOTYuMDQ3YzkuMTI0IDAgMTcuODc0IDMuNjIyIDI0LjMxOCAxMC4wNjhsMTMwLjMyMyAxMzAuMzRjNi40MjcgNi40MjcgMTAuMDM2IDE1LjEzNyAxMC4wMzYgMjQuMjE3eiIgZmlsbD0iI2Y5ZjhmOSIgZGF0YS1vcmlnaW5hbD0iI0Y5RjhGOSIgY2xhc3M9IiIvPjxwYXRoIGQ9Im0xMjkuNDQyIDUxMmgtMzAuOTA1Yy0yNS4yOTEgMC00NS44MDItMjAuNDctNDUuODAyLTQ1LjcxOXYtNDIwLjU2MmMwLTI1LjI0OSAyMC41MTEtNDUuNzE5IDQ1LjgwMi00NS43MTloMzAuOTA1Yy0yNS4yOTEgMC00NS44MDIgMjAuNDctNDUuODAyIDQ1LjcxOXY0MjAuNTYxYzAgMjUuMjUgMjAuNTExIDQ1LjcyIDQ1LjgwMiA0NS43MnoiIGZpbGw9IiNlM2UwZTQiIGRhdGEtb3JpZ2luYWw9IiNFM0UwRTQiIGNsYXNzPSIiLz48cGF0aCBkPSJtNDU5LjI2NSAxNjQuNjIzdjE2LjczaC0xMTkuNDZjLTM0LjEyIDAtNjEuODczLTI3Ljc2My02MS44NzMtNjEuODgzdi0xMTkuNDdoMTYuNjU4YzkuMTE3IDAgMTcuODc0IDMuNjI2IDI0LjMxMiAxMC4wNjVsMTMwLjMyOCAxMzAuMzM5YzYuNDI5IDYuNDI4IDEwLjAzNSAxNS4xNDMgMTAuMDM1IDI0LjIxOXoiIGZpbGw9IiNlM2UwZTQiIGRhdGEtb3JpZ2luYWw9IiNFM0UwRTQiIGNsYXNzPSIiLz48cGF0aCBkPSJtNDU2LjE4NSAxNTAuNDQ4aC0xMTYuMzhjLTE3LjEwMSAwLTMwLjk2Ny0xMy44NjYtMzAuOTY3LTMwLjk3OHYtMTE2LjM2OWMzLjcxOSAxLjY3OSA3LjEyOSA0LjAyOCAxMC4wNjUgNi45NjRsMTMwLjMyOCAxMzAuMzM5YzIuOTM2IDIuOTM1IDUuMjc1IDYuMzM1IDYuOTU0IDEwLjA0NHoiIGZpbGw9IiNkYzQ5NTUiIGRhdGEtb3JpZ2luYWw9IiNEQzQ5NTUiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzQ5NDlFNyIgZGF0YS1vbGRfY29sb3I9IiNkYzQ5NTUiLz48cGF0aCBkPSJtNDQwLjQwMiA0NDQuMDA4aC0zNjguODA0Yy0yMi43NTggMC00MS4yMDctMTguNDUtNDEuMjA3LTQxLjIwN3YtMTUwLjQwN2MwLTIyLjc1OCAxOC40NS00MS4yMDcgNDEuMjA3LTQxLjIwN2gzNjguODA1YzIyLjc1OCAwIDQxLjIwNyAxOC40NSA0MS4yMDcgNDEuMjA3djE1MC40MDZjMCAyMi43NTktMTguNDUgNDEuMjA4LTQxLjIwOCA0MS4yMDh6IiBmaWxsPSIjZGM0OTU1IiBkYXRhLW9yaWdpbmFsPSIjREM0OTU1IiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM0OTQ5RTciIGRhdGEtb2xkX2NvbG9yPSIjZGM0OTU1Ii8+PHBhdGggZD0ibTk3LjM1MiA0NDQuMDA4aC0yNS43NTRjLTIyLjc1NyAwLTQxLjIwNy0xOC40NTEtNDEuMjA3LTQxLjIwN3YtMTUwLjQwN2MwLTIyLjc1NyAxOC40NTEtNDEuMjA3IDQxLjIwNy00MS4yMDdoMjUuNzU1Yy0yMi43NTcgMC00MS4yMDcgMTguNDUxLTQxLjIwNyA0MS4yMDd2MTUwLjQwNmMtLjAwMSAyMi43NTcgMTguNDQ5IDQxLjIwOCA0MS4yMDYgNDEuMjA4eiIgZmlsbD0iI2M0MjQzMCIgZGF0YS1vcmlnaW5hbD0iI0M0MjQzMCIgY2xhc3M9IiIgc3R5bGU9ImZpbGw6IzEyNzNFQiIgZGF0YS1vbGRfY29sb3I9IiNjNDI0MzAiLz48ZyBmaWxsPSIjZjlmOGY5Ij48cGF0aCBkPSJtMzg4LjA3MiAyNzcuMDM3YzQuMjY3IDAgNy43MjYtMy40NTggNy43MjYtNy43MjZzLTMuNDU5LTcuNzI2LTcuNzI2LTcuNzI2aC00Ny4yNDdjLTQuMjY3IDAtNy43MjYgMy40NTgtNy43MjYgNy43MjZ2MTE2LjU3M2MwIDQuMjY4IDMuNDU5IDcuNzI2IDcuNzI2IDcuNzI2czcuNzI2LTMuNDU4IDcuNzI2LTcuNzI2di01MS42NjRoMzUuNzY4YzQuMjY3IDAgNy43MjYtMy40NTggNy43MjYtNy43MjZzLTMuNDU5LTcuNzI2LTcuNzI2LTcuNzI2aC0zNS43Njh2LTQxLjczMXoiIGRhdGEtb3JpZ2luYWw9IiNGOUY4RjkiIGNsYXNzPSIiLz48cGF0aCBkPSJtMjU4Ljc0NyAyNjIuODkxaC0zMi4yNzZjLTIuMDUyIDAtNC4wMTkuODE2LTUuNDY4IDIuMjY4cy0yLjI2MiAzLjQyLTIuMjU4IDUuNDcydi4xMDEuMDA0IDExMS45OWMwIC42MzcuMDg1IDEuMjUyLjIzMSAxLjg0NHYuMDM1Yy4wMDcgMi4wNDkuODI5IDQuMDEyIDIuMjgzIDUuNDU2IDEuNDQ3IDEuNDM3IDMuNDA1IDIuMjQzIDUuNDQzIDIuMjQzaC4wMjljLjk3NC0uMDA0IDIzLjk0My0uMDkzIDMzLjA5Ni0uMjUxIDE1LjUxNS0uMjcyIDI5LjMzLTcuMzAzIDM4LjkwNC0xOS43OTggOC44NzUtMTEuNTgzIDEzLjc2My0yNy40NDMgMTMuNzYzLTQ0LjY1NyAwLTM4LjcwMy0yMS41OTktNjQuNzA3LTUzLjc0Ny02NC43MDd6bS44MTEgMTEzLjcxYy01Ljc1LjEtMTcuMzgyLjE3My0yNS4xNTUuMjEzLS4wNDMtMTIuNzQzLS4xMjItMzcuODc3LS4xMjItNDkuMzQzIDAtOS41ODQtLjA0NC0zNS45MzMtLjA2OC00OS4xMjdoMjQuNTM1YzI4LjIzNCAwIDM4LjI5NCAyNS40NDIgMzguMjk0IDQ5LjI1NC0uMDAxIDI4LjQ2Ny0xNS40MTUgNDguNjE3LTM3LjQ4NCA0OS4wMDN6IiBkYXRhLW9yaWdpbmFsPSIjRjlGOEY5IiBjbGFzcz0iIi8+PC9nPjwvZz48cGF0aCBkPSJtMTQ2LjMzNiAyNjEuNDQ0aC0zMi45NjdjLTYuNzQ2IDAtNy4xMDIgMi45MzgtNy4xMDIgNy4wOTl2MTE4LjM5N2MwIDMuOTIxIDMuMTc4IDcuMDk5IDcuMDk5IDcuMDk5IDMuOTIgMCA3LjA5OS0zLjE3NyA3LjA5OS03LjA5OXYtNDQuMzY4YzcuNjk4LS4wNDQgMTkuOTE2LS4xMDcgMjUuODY4LS4xMDcgMjIuNjk4IDAgNDEuMTY1LTE4LjE3MyA0MS4xNjUtNDAuNTExLS4wMDEtMjIuMzM3LTE4LjQ2NC00MC41MS00MS4xNjItNDAuNTF6bTAgNjYuODI0Yy01LjkxMyAwLTE3Ljk1Mi4wNjEtMjUuNjc5LjEwNi0uMDQ0LTcuOTE0LS4xMDctMjAuMzktLjEwNy0yNi40MTkgMC01LjA2Ni0uMDM2LTE4LjA5NS0uMDYxLTI2LjMxM2gyNS44NDZjMTQuNjE4IDAgMjYuOTY3IDEyLjA0OSAyNi45NjcgMjYuMzEzLjAwMSAxNC4yNjQtMTIuMzQ5IDI2LjMxMy0yNi45NjYgMjYuMzEzeiIgZmlsbD0iI2Y5ZjhmOSIgZGF0YS1vcmlnaW5hbD0iI0Y5RjhGOSIgY2xhc3M9IiIvPjwvZz48L2c+IDwvc3ZnPgo=">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style class="INLINE_PEN_STYLESHEET_ID">
+        body {
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            user-select: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            border-radius: 8px
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: #333;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #777;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            padding: 2px 16px;
+            background-color: #f1f1f1;
+            color: color;
+            border-bottom: 1px solid black;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding: 2px 16px;
+            background-color: #f1f1f1;
+            color: black;
+            border-top: 1px solid black;
+            text-align: center;
+        }
+
+        #pdfContent {
+            border: 1px dashed #000;
+            text-align: center;
+        }
+
+        #pdfContent h1 {
+            text-align: center;
+            margin-top: -10px;
+            height: 20px;
+            font-size: 20px;
+            font-family: Arial;
+        }
+
+        #pdfContent h1 span {
+            background-color: #fff;
+        }
+
+        button {
+            border-radius: 5px;
+            margin: 10px;
+            background-color: #4caf50;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            transition-duration: 0.3s;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #008cba;
+        }
+
+        button:hover {
+            background-color: #008cba;
+            color: #fff;
+        }
+
+        button:active {
+            outline: none;
+            border: none;
+            background-color: #006080;
+            margin: 12px;
+            color: #fff;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+            color: #fff;
+            background-color: #ccc;
+            border: #b3b3b3;
+        }
+
+        a {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .pdfcc {
+            position: absolute;
+            font-size: 17px;
+            background-color: #333;
+            padding: 3px;
+            color: white;
+            border-radius: 5px;
+            display: inline-block;
+            z-index: 99999;
+        }
+
+        .round-dark {
+            padding: 8px;
+            border-radius: 20px;
+            font: 12px Arial;
+            background: #333;
+            color: white;
+            margin: 2px;
+            border: none;
+        }
+
+        .round-dark:hover {
+            background: #555;
+        }
+
+        .round-dark:active {
+            padding: 8px;
+            border-radius: 20px;
+            font: 12px Arial;
+            background: #444;
+            color: white;
+            margin: 2px;
+            border: none;
+        }
+
+        .header {
+            text-align: center;
+            font-family: Arial;
+            font-size: 36px;
+            background: #008CBA;
+            border: none;
+            position: sticky;
+            padding: 12px;
+            margin: -8px;
+            margin-bottom: 8px;
+        }
+
+        #myPdf {
+            display: none;
+        }
+
+        .bottom {
+            margin: 0px;
+            border: none;
+            color: #f1f1f1;
+            background: #333;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .dnl {
+            margin-bottom: 70px;
+        }
+
+        #selpdf {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .right {
+            text-align: left;
+        }
+
+        .modal_head {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 class="modal_head">Welcome to PDF2NG</h2>
+            </div>
+            <div class="modal-body">
+                <h3>1. What is PDF2NG?</h3>
+                <p class="right">PDF2NG is a PDF to PNG to JPG converter. </p>
+                <h3>2. How to use it?</h3>
+                <p class="right">
+                <ol>
+                    <li>To choose your pdf click on "Select PDF" button.</li>
+                    <li>Then select the page that you want to convert.
+                        You can use the arrows, the mouse wheel, the slider at left to change page.
+                        You can press space to reload the page.
+                    </li>
+                    <li>Drag your mouse in the page to highlight something.</li>
+                    <li>Click on "Download PNG/JPG" button to download the selected page.</li>
+                </ol>
+                </p>
+                <h3>3. Data Collection</h3>
+                <p class="right">I don't collect any kind of data.</p>
+                <h3>4. Credits</h3>
+                <p class="right">Icons by fontawesome. Page icon by flaticon. Project is under the MIT License</p>
+            </div>
+            <div class="modal-footer">
+                <button id="closebtn">Ok</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="header">PDF2NG - PDF to png converter</div>
+    <p>
+        <input type="file" id="myPdf" accept="application/pdf">
+        <button id="selpdf"><i class="far fa-file-upload"></i> Select PDF</button>
+    </p>
+    <p id="statusi"></p>
+    <div id='pdfContent'>
+        <h1><span>Pdf preview</span></h1>
+        <p class=pgnm>
+            <span class='pdfcc'>&nbsp;
+                <button class=round-dark id="rotate-left">
+                    <img alt="rotate left" type="image/svg+xml" style="width:13px; height:13px;"
+                        src="https://raw.githubusercontent.com/stelios333/ola/e2cdc2c652f92b7d480eb6b08e225a76534d234a/left-rotate.svg">
+                </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class='round-dark' id=left-button>&lt;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span id=pg></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class=round-dark id=right-button>&gt;</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class=round-dark id=rotate-right>
+                    <img alt="rotate right" type="image/svg+xml" style="width:13px; height:13px;"
+                        src="https://raw.githubusercontent.com/stelios333/ola/a35cb3a0902f142cd8c50894ce4c02257ddf1217/right-rotate.svg">
+                </button>&nbsp;
+            </span>
+        </p>
+        <p style="text-align: right;position: absolute" id='pages-controler'>
+            <input type='range' min=1 id='page' value='1' placeholder='Press enter to submit'
+                style="width: 100%; -webkit-appearance: slider-vertical; transform: rotate(180deg);">
+        </p>
+        <canvas id="pdfViewer"></canvas>
+    </div>
+    <p>
+        <button class="dnl" id="dnl" disabled><i class="far fa-file-download"></i> Download PNG</button>
+        <button class="dnl" id="dnljfif" disabled><i class="far fa-file-download"></i> Download JPG</button>
+    </p>
+    <div class="bottom">
+        Powered by Stelios333 2019-2022&copy;. Icons by fontawesome 5. Page icon by flaticon.
+    </div>
+    <script>
+    </script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script id="INLINE_PEN_JS_ID">
+        var pdfcanvas = document.getElementById('pdfViewer');
+        var rendered = false;
+        $("#closebtn").on("click", function () {
+            $("#myModal").hide()
+        })
+
+        setInterval(function () {
+            $('page').blur()
+        })
+        var pages
+        var cpage = 1
+        $('.pgnm').fadeOut()
+        $('#page').fadeOut()
+        var pdfjsLib = window["pdfjs-dist/build/pdf"];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = "https://mozilla.github.io/pdf.js/build/pdf.worker.js";
+        $("#myPdf").on("change", function (e) {
+            document.getElementById('page').value = 1
+            openpdf(e, Number(document.getElementById("page").value))
+        });
+
+        $("#selpdf").on("click", function () {
+            $("#myPdf").click()
+        })
+
+        function openpdf(files, pg) {
+            rendered = false
+            window.onkeydown = function (eve) {
+                eve.preventDefault()
+            }
+            document.getElementById('left-button').onclick = null
+            document.getElementById('right-button').onclick = null
+            var eve = null;
+            var file = files.target.files[0];
+            if ("application/pdf" == file.type) {
+                var filereader = new FileReader;
+                filereader.onload = function () {
+                    var e = new Uint8Array(this.result);
+                    pdfjsLib.getDocument({
+                        data: e
+                    }).promise.then(function (e) {
+                        pages = e.numPages
+                        document.getElementById("dnl").disabled = !1;
+                        document.getElementById("dnljfif").disabled = !1;
+                        statusi.innerHTML = "Uploading 0%...";
+                        e.getPage(pg).then(function (e) {
+                            $("#statusi")[0].innerHTML = "Uploading 50%...";
+                            var t = e.getViewport({
+                                scale: 1.5
+                            }),
+                                i = $("#pdfViewer")[0];
+                            n = i.getContext("2d");
+                            i.height = t.height, i.width = t.width;
+                            var d = {
+                                canvasContext: n,
+                                viewport: t
+                            };
+                            e.render(d).promise.then(function () {
+                                rendered = true
+                                var ctx = pdfcanvas.getContext('2d')
+                                var rect;
+                                ctx.lineJoin = "round";
+                                ctx.lineCap = "round";
+                                var mouse_is_down = false;
+                                setInterval(function () {
+                                    ctx.lineJoin = "round";
+                                })
+
+                                ctx.lineCap = "round";
+
+
+                                function MyMouseDownHandler(MyEvent) {
+                                    ctx.lineWidth = 2
+                                    ctx.strokeStyle = 'red'
+                                    if (MyEvent.which == 1) mouse_is_down = true;
+                                    rect = pdfcanvas.getBoundingClientRect();
+                                    ctx.moveTo(MyEvent.clientX - rect.left, MyEvent.clientY - rect.top);
+
+                                };
+
+                                function MyMouseUpHandler(MyEvent) {
+                                    if (MyEvent.which == 1) mouse_is_down = false;
+                                };
+
+                                function MyMouseMoveHandler(MyEvent) {
+                                    if (mouse_is_down) {
+
+                                        ctx.lineTo(MyEvent.clientX - rect.left, MyEvent.clientY - rect.top);
+                                        ctx.stroke();
+                                    };
+                                };
+
+                                function MyTouchMoveHandler(MyEvent) {
+                                    if (mouse_is_down) {
+                                        ctx.lineTo(MyEvent.touches[0].clientX - rect.left - 3, MyEvent.touches[0].clientY - rect.top - 3);
+                                        ctx.stroke();
+                                    };
+                                };
+                                pdfcanvas.addEventListener("mousedown", MyMouseDownHandler);
+                                pdfcanvas.addEventListener("mouseup", MyMouseUpHandler);
+                                pdfcanvas.addEventListener("mouseleave", MyMouseUpHandler);
+                                pdfcanvas.addEventListener("mousemove", MyMouseMoveHandler);
+                                pdfcanvas.addEventListener("touchmove", MyTouchMoveHandler);
+                                document.getElementById('page').style.height = String(i.height - 15) + "px"
+                                $("#statusi")[0].innerHTML = "Upload completed!"
+                                $("#page").fadeIn(500)
+                                $(".pgnm").fadeIn(500)
+                                document.getElementById('pg').innerHTML = String(pg) + '/' + String(pages)
+                                document.getElementById('page').max = pages
+                                document.getElementById('page').value = pg
+                                var pdf_frame = {
+                                    "rotation": 0
+                                }
+
+                                $('#pdfViewer').on('wheel', function (event) {
+                                    eve = event
+                                    event.preventDefault()
+                                })
+                                document.getElementById('pdfViewer').onwheel = function (event) {
+                                    if (rendered) {
+                                        var delta = eve.originalEvent.deltaY;
+
+                                        if (delta > 0) {
+                                            if (pg < pages) {
+                                                openpdf(files, pg + 1)
+                                                event.preventDefault()
+                                            }
+                                        } else {
+                                            if (pg > 1) {
+                                                openpdf(files, pg - 1)
+                                                event.preventDefault()
+                                            }
+                                        };
+                                    } else {
+                                        event.preventDefault()
+                                    }
+
+                                };
+                                document.getElementById('left-button').onclick = function () {
+                                    if (pg > 1) {
+                                        openpdf(files, pg - 1)
+                                        event.preventDefault()
+                                    }
+
+                                }
+                                document.getElementById('right-button').onclick = function () {
+                                    if (pg < pages) {
+                                        openpdf(files, pg + 1)
+                                        event.preventDefault()
+                                    }
+                                }
+                                document.getElementById("page").onchange = function () {
+                                    if (rendered) {
+                                        openpdf(files, Number(this.value))
+                                    }
+                                }
+                                $('#pdfContent').onmouseenter = function () {
+                                    $('#page').fadeIn(500)
+                                    $('.pgnm').fadeIn(500)
+                                }
+                                $('#pdfContent').onmouseout = function () {
+                                    $('#page').fadeOut(500)
+                                    $('.pgnm').fadeOut(500)
+                                }
+                                document.getElementById('rotate-left').onclick = function () {
+                                    pdf_frame.rotation -= 90;
+                                    document.getElementById('pdfViewer').style.transform = "rotate(" + Number(pdf_frame.rotation) + "deg)"
+                                }
+                                document.getElementById('rotate-right').onclick = function () {
+                                    pdf_frame.rotation += 90;
+                                    document.getElementById('pdfViewer').style.transform = "rotate(" + Number(pdf_frame.rotation) + "deg)"
+
+                                }
+                                window.onkeydown = function () {
+                                    if (event.key == 'ArrowUp') {
+                                        if (pg > 1) {
+                                            openpdf(files, pg - 1)
+                                            event.preventDefault()
+                                        }
+                                    }
+                                    if (event.key == 'ArrowDown') {
+                                        if (pg < pages) {
+                                            openpdf(files, pg + 1)
+                                            event.preventDefault()
+                                        }
+                                    }
+                                    if (event.key == ' ') {
+                                        openpdf(files, pg)
+                                        event.preventDefault()
+                                    }
+                                }
+
+                            })
+                        })
+                    }, function (e) {
+                        console.error(e)
+                    })
+                }, filereader.readAsArrayBuffer(file)
+            }
+        }
+        document.getElementById("dnl").onclick = function () {
+            downloadCanvas("image/png", "png")
+        }
+        document.getElementById("dnljfif").onclick = function () {
+            downloadCanvas("image/jpeg", "jpg")
+        }
+
+        function downloadCanvas(mime_type, extension) {
+            pdfcanvas.toBlob(function (blob) {
+                const url = URL.createObjectURL(blob)
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = url;
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'Converted_pdf.' + extension;
+                hiddenElement.click()
+            }, mime_type, 1)
+        }
+    </script>
+</body>
+
+</html>
